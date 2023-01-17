@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  GlobalKey _shareKey = GlobalKey();
+  final GlobalKey _shareKey = GlobalKey();
 
   _getPositions() {
     final RenderBox shareBox =
@@ -41,9 +41,16 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(CupertinoIcons.share),
               onPressed: () {
                 _getPositions();
-                final RenderBox shareBox = _shareKey.currentContext!.findRenderObject() as RenderBox;
+                final RenderBox shareBox =
+                    _shareKey.currentContext!.findRenderObject() as RenderBox;
                 final positionShare = shareBox.localToGlobal(Offset.zero);
-                Share.share('Testing', subject: '', sharePositionOrigin:Rect.fromLTWH(positionShare!.dx, positionShare.dy, shareBox!.size.width, shareBox.size.height));
+                Share.share('Testing',
+                    subject: 'test',
+                    sharePositionOrigin: Rect.fromLTWH(
+                        positionShare.dx,
+                        positionShare.dy,
+                        shareBox.size.width,
+                        shareBox.size.height));
               },
             )),
       ]),
