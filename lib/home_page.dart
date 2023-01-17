@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback(_afterLayout);
+    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
     super.initState();
   }
 
@@ -44,8 +44,8 @@ class _HomePageState extends State<HomePage> {
                 final RenderBox shareBox =
                     _shareKey.currentContext!.findRenderObject() as RenderBox;
                 final positionShare = shareBox.localToGlobal(Offset.zero);
-                Share.share('Testing',
-                    subject: 'test',
+                Share.share('https://github.com/aksanadev/share_feature',
+                    subject: 'Share git Repo',
                     sharePositionOrigin: Rect.fromLTWH(
                         positionShare.dx,
                         positionShare.dy,
