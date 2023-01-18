@@ -1,4 +1,5 @@
-import 'package:share_feature/custom_button.dart';
+// import 'package:share_feature/custom_button.dart';
+import 'package:share_feature/platform_icon_button.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class StatelessHomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButton(
+            child: PlatformIconButton(
                 keyValue: _shareKey,
                 customIcon: const Icon(CupertinoIcons.share),
                 onPressed: () {
