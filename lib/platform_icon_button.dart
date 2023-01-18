@@ -33,6 +33,7 @@ class PlatformIconButton extends StatelessWidget {
 
   Widget _buildMaterialButton() {
     return IconButton(
+      key: keyValue,
       icon: customIcon,
       onPressed: () {
         onPressed();

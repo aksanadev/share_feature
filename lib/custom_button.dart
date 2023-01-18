@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlatformIconButton extends StatelessWidget {
@@ -13,9 +14,10 @@ class PlatformIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
+    return CupertinoButton(
+        color: Colors.red,
         key: keyValue,
-        icon: customIcon,
+        child: customIcon,
         onPressed: () {
           onPressed();
         });

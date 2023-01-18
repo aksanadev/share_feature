@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
@@ -13,23 +13,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey _shareKey = GlobalKey();
 
-  // _getPositions() {
-  //   final RenderBox shareBox =
-  //       _shareKey.currentContext!.findRenderObject() as RenderBox;
-  //   final positionShare = shareBox.localToGlobal(Offset.zero);
-  //   log('position: $positionShare');
-  // }
-
-  // _afterLayout(_) {
-  //   _getPositions();
-  // }
-
-  // @override
-  // void initState() {
-  //   WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +21,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: IconButton(
               key: _shareKey,
-              icon: const Icon(CupertinoIcons.share),
+              icon: Icon(Platform.isIOS ? CupertinoIcons.share : Icons.share),
               onPressed: () {
                 // _getPositions();
                 final RenderBox shareBox =

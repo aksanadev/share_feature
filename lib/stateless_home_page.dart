@@ -1,4 +1,5 @@
 // import 'package:share_feature/custom_button.dart';
+import 'dart:io';
 import 'package:share_feature/platform_icon_button.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +19,8 @@ class StatelessHomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: PlatformIconButton(
                 keyValue: _shareKey,
-                customIcon: const Icon(CupertinoIcons.share),
+                customIcon:
+                    Icon(Platform.isIOS ? CupertinoIcons.share : Icons.share, color: Colors.red,),
                 onPressed: () {
                   final RenderBox shareBox =
                       _shareKey.currentContext!.findRenderObject() as RenderBox;
