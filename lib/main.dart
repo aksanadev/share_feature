@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:share_feature/home_page.dart';
+// import 'package:share_feature/home_page.dart';
+import 'package:share_feature/stateless_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      // home: const HomePage(),
+      home: StatelessHomePage(),
     );
   }
 }
