@@ -3,15 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlatformIconButton extends StatelessWidget {
-  const PlatformIconButton(
-      {super.key,
-      required this.keyValue,
-      required this.customIcon,
-      required this.onPressed});
-
   final GlobalKey keyValue;
   final Icon customIcon;
   final Function onPressed;
+  
+  const PlatformIconButton(
+    {super.key,
+    required this.keyValue,
+    required this.customIcon,
+    required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
